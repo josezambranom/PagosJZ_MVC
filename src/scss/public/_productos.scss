@@ -1,0 +1,128 @@
+@use 'base/mixins' as m;
+
+@use 'base/variables' as v;
+
+.productos {
+
+    .busqueda {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 5rem;
+        input {
+            padding: .5rem;
+        }
+    }
+
+    p {
+        text-align: justify;
+        line-height: 1.5;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    .producto {
+        background-color: lighten($color: v.$grisOscuro, $amount: 50%);
+        padding: 1.5rem;
+        border: 0.3rem solid v.$negro;
+        border-radius: 2rem;
+        width: 25rem;
+        height: 42rem;
+
+        @include m.tablet {
+              width: auto;
+        }
+
+        p {
+            color: v.$negro
+        }
+    
+        &__nombre {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+    
+        &__precio {
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+    
+        &__nombre, &__precio {
+            text-align: center;
+            line-height: 1.5;
+        }
+    
+        &__imagen {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+            border: 0.3rem solid v.$blanco;
+            border-radius: 20rem;
+        }
+    }
+    
+    .streaming,
+    .videojuegos,
+    .recargas {  
+        
+        &_contenido {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            align-items: center;
+            justify-content: center;
+            
+            @include m.tablet {
+                width: auto;
+                @include m.grid(3,2rem);
+            }
+            
+            @include m.pc {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+}
+
+.nav_productos {
+    margin-top: 5rem;
+    text-align: center;
+
+    @include m.tablet {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5rem;
+    }
+    
+
+    .nav_tienda {
+        width: 15rem;
+        margin: 2rem auto;
+        border: .2rem solid v.$negro;
+        border-radius: .8rem;
+        padding: 1.5rem;
+
+        &:hover {
+            cursor: pointer;
+            animation: rebote 1.5s infinite;
+            background-color: v.$blanco;
+        }
+
+        @include m.tablet {
+              margin: 0;
+        }
+
+        img {
+            width: 5rem;
+        }
+
+        &_informacion {
+            p {
+                font-size: 1.8rem;
+                line-height: 1.5;
+            }
+        }
+    }
+}

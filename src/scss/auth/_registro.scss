@@ -1,0 +1,52 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.registro {
+    margin: 3rem auto;
+    border: .2rem solid v.$negro;
+    
+    @include m.tablet {
+        @include m.grid(2, 0);     
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin: 0;
+        padding-top: 2rem;
+    }    
+
+    p{
+        font-size: 1.4rem;
+    }
+
+    .registro_imagen {
+        background-color: v.$blanco;
+        padding-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include m.tablet {
+            background-color: lighten($color: v.$celeste, $amount: 30%);
+            padding-top: 0;
+        }
+    }
+
+    .registro_contenido {
+        background-color: v.$blanco;
+
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .campo {
+                margin: 1rem;
+            }
+            .boton {
+                font-size: 1.6rem;
+            }
+            @include m.tablet {
+                  display: block;
+            }
+        }
+    }
+}

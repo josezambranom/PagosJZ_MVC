@@ -1,0 +1,16 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.footer_dashboard {
+    margin-top: 5rem;
+    text-align: center;
+
+    p {
+        font-size: 1.5rem;
+
+        span {
+            font-weight: bold;
+            color: v.$azul;
+        }
+    }
+}

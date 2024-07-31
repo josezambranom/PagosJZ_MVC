@@ -1,0 +1,26 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.inicio {
+    text-align: center;
+    
+    @include m.pc {
+        padding: 5rem;
+    }
+    p {
+        text-align: justify;
+        line-height: 2;
+    }
+    .contenido {
+        @include m.pc {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+
+            img {
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+}

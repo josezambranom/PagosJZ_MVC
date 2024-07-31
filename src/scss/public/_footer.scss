@@ -1,0 +1,33 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.footer {
+    background-color: darken($color: v.$celeste, $amount: 25%);
+    margin-top: 5rem;
+    padding: 1rem;
+    text-align: center;
+
+    p {
+        color: v.$blanco;
+    }
+}
+
+.ir-arriba-btn {
+    display: none; /* Oculto inicialmente */
+    position: fixed; /* Posición fija en la ventana */
+    z-index: 99; /* Asegura que esté sobre otros elementos */
+    border: none;
+    border-radius: 1rem;
+    background-color: v.$negro;
+    color: v.$blanco;
+    font-size: 2rem;
+    bottom: 5rem;
+    right: 2rem;
+    padding: 1rem;
+    
+    &:hover {
+        cursor: pointer;
+        background-color: v.$blanco;
+        color: v.$negro;
+    }
+}

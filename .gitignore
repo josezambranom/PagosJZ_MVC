@@ -1,0 +1,7 @@
+/composer.lock
+/node_modules
+/package-lock.json
+/vendor
+/public/imagenes
+/includes/.env
+/includes/env

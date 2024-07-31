@@ -1,0 +1,1 @@
+document.querySelector("#form_olvide").addEventListener("submit",(function(e){e.preventDefault();const t=document.querySelector("#email_olvide").value.trim();if(!t)return i="warning",o="¡Importante!",l="El email es obligatorio",void Swal.fire({icon:i,title:o,text:l,allowOutsideClick:!1});var i,o,l;t=""}));

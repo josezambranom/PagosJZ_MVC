@@ -1,0 +1,24 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.nosotros {
+    text-align: center;
+    
+    p {
+        text-align: justify;
+        line-height: 2;
+    }
+
+    .bloques {
+        @include m.tablet {
+            @include m.grid(2, 5rem);     
+        }
+    }
+
+    .bloque {
+
+        img {
+            filter: brightness(0%);
+        }
+    }
+}

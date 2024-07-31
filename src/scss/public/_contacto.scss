@@ -1,0 +1,35 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.contacto {
+
+    .formulario {
+        width: auto;
+        margin: 0 auto;
+        padding: 2rem;
+        border-radius: 1rem;
+        color: v.$negro;
+
+        legend {
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        textarea {
+            height: 10rem;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            border: .2rem solid v.$negro;
+        }
+        .boton {
+            width: auto;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+h1, h2, h3 {
+    font-weight: 900;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.6rem;
+}
+h3 {
+    font-size: 3rem;
+    text-align: center;
+}
+p {
+    font-size: 2rem;
+}
+
+.nombre-pagina {
+    text-align: center;
+    font-weight: v.$bold;
+}
+
+.descripcion-pagina {
+    text-align: center;
+}

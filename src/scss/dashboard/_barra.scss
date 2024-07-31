@@ -1,0 +1,133 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: v.$blanco;
+    padding: 1rem 2rem;
+    height: 7rem;
+    position: fixed;
+    top: 0;
+    width: calc(100% - 15rem);
+
+    @include m.tablet {
+        padding: 1rem 5rem;
+        width: calc(100% - 25rem);
+    }
+
+    &.sidebarOculto {
+        width: 100%;
+    }
+
+    .barra_menu {
+        width: 3rem;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .opciones_usuario {
+        width: 15rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include m.tablet {
+              width: 30rem;
+        }
+
+        .saldo {
+            background-color: v.$amarillo;
+            border-radius: 3rem;
+            padding: .1rem 1rem;
+
+            p {
+                font-size: 1.4rem;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .perfil {
+
+        .perfil_img {
+            width: 4rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .opciones_perfil {
+            display: none;
+            width: 15rem;
+            background-color: v.$blanco;
+            border: .1rem solid v.$negro;
+            text-align: center;
+            padding: .1rem .2rem;
+
+            @include m.tablet {
+                  width: 20rem;
+            }
+    
+            .datos {
+                padding: .5rem 2rem;
+            }
+    
+            p {
+                margin: .5rem 0 0 0;
+            }
+    
+            .usuario {
+                font-size: 1.4rem;
+                font-weight: bold;
+                @include m.tablet {
+                      font-size: 1.8rem;
+                }
+            }
+    
+            .tipo {
+                font-size: 1rem;
+                @include m.tablet {
+                      font-size: 1.4rem;
+                }
+            }
+    
+            ul {
+                padding: 0;
+                text-align: left;
+                background-color: v.$crema;
+                margin: .3rem 0;
+    
+                li {
+                    list-style: none;
+                    padding:.5rem;
+                    a {
+                        color: v.$negro;
+                        font-size: 1.2rem;
+                        
+                        @include m.tablet {
+                              font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+
+            &.mostrar {
+                display: block;
+                position: absolute;
+                top: 6rem;
+                right: 1rem;
+
+                @include m.tablet {
+                      right: 4rem;
+                }
+            }
+
+        }
+    }
+}

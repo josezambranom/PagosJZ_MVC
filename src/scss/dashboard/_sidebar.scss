@@ -1,0 +1,51 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.sidebar_dashboard {
+    background-color: darken($color: v.$celeste, $amount: 20%);
+    width: 15rem;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    text-align: center;
+
+    @include m.tablet {
+          width: 25rem;
+    }
+
+    img {
+        margin-top: 2rem;
+        width: 10rem;
+
+        @include m.tablet {
+              width: 12rem;
+        }
+    }
+
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+        text-align: left;
+
+        a {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: v.$crema;
+        }
+    }
+
+    .activo {
+        width: auto;
+        background-color: v.$azulOscuro;
+        padding: .5rem 1.5rem;
+        border-radius: .5rem;
+    }
+
+    &.ocultar {
+        display: none;
+    }
+}
