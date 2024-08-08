@@ -22,7 +22,7 @@
                     </div>
                     <div class="campo">
                         <label>Mensaje</label>
-                        <textarea></textarea>
+                        <textarea name="mensaje"></textarea>
                     </div>
                 </div><!-- .contenedor-campos -->
                 <input class="boton" type="submit" value="Enviar">

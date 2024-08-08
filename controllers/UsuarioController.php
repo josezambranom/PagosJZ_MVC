@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Classes\Email;
 use Models\Persona;
 use Models\Usuario;
 
@@ -95,7 +96,16 @@ class UsuarioController {
                 $persona->usuarioid = $resultado['id'];
                 $resultado = $persona->guardar();
 
-                echo json_encode($resultado);
+                $nombre = $persona->nombre . ' ' . $persona->apellido;
+                $mail = new Email($usuario->email, $nombre, $usuario->token);
+                $alerta = $mail->registro();
+
+                $respuesta = [
+                    'alerta' => $alerta,
+                    'resultado' => $resultado
+                ];
+
+                echo json_encode($respuesta);
             } else {
                 $respuesta = [
                     'usuario' => $alertas['usuario'],
@@ -105,10 +115,31 @@ class UsuarioController {
             }
 
         } else {
-            $respuesta = [
-                'error' => 'Error en solicitud'
-            ];
-            echo json_encode($respuesta);
+            echo json_encode(['error' => 'Error en solicitud']);
+        }
+    }
+
+    public static function olvide() {
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $user = $_POST['email'];
+            $usuario = Usuario::where('email', $user);
+            if(!$usuario || !$usuario->confirmado) {
+                echo json_encode(['error' => 'Usuario no registrado o cuenta no confirmada']);
+                return;
+            }
+            $usuario->crearToken();
+            $resultado = $usuario->guardar();
+            if(!$resultado) {
+                echo json_encode(['error' => 'Ocurrió un error al procesar esta solicitud']);
+                return;
+            }
+            $persona = Persona::where('usuarioid', $usuario->id);
+            $nombre = $persona->nombre . ' ' . $persona->apellido;
+            $email = new Email($usuario->email, $nombre, $usuario->token);
+            $resultado = $email->recuperacion();
+            echo json_encode(['respuesta' => $resultado]);
+        } else {
+            echo json_encode(['error' => 'Error en solicitud']);
         }
     }
 

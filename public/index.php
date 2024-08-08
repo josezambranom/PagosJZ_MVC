@@ -26,6 +26,8 @@ $router->getRequest('/usuario/login', [UsuarioController::class, 'login']);
 $router->postRequest('/usuario/login', [UsuarioController::class, 'login']);
 $router->getRequest('/usuario/registro', [UsuarioController::class, 'registro']);
 $router->postRequest('/usuario/registro', [UsuarioController::class, 'registro']);
+$router->getRequest('/usuario/olvide', [UsuarioController::class, 'olvide']);
+$router->postRequest('/usuario/olvide', [UsuarioController::class, 'olvide']);
 $router->getRequest('/perfil', [UsuarioController::class, 'perfil']);
 $router->postRequest('/perfil', [UsuarioController::class, 'perfil']);
 $router->getRequest('/cambiar-clave', [UsuarioController::class, 'cambiarClave']);
@@ -34,13 +36,13 @@ $router->getRequest('/cuentas', [CuentaController::class, 'cuentas']);
 
 // Auth
 $router->getRequest('/registro', [LoginController::class, 'registro']);
-$router->postRequest('/registro', [LoginController::class, 'registro']);
 $router->getRequest('/login', [LoginController::class, 'login']);
-$router->postRequest('/login', [LoginController::class, 'login']);
 $router->getRequest('/logout', [LoginController::class, 'logout']);
 $router->getRequest('/olvide', [LoginController::class, 'olvide']);
 $router->getRequest('/recuperar', [LoginController::class, 'recuperar']);
 $router->postRequest('/recuperar', [LoginController::class, 'recuperar']);
+$router->getRequest('/verificar', [LoginController::class, 'verificar']);
+$router->getRequest('/mensaje', [LoginController::class, 'mensaje']);
 
 // Admin
 $router->getRequest('/admin', [AdminController::class, 'index']);

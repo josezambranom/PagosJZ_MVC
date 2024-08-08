@@ -62,7 +62,7 @@
                 body: datos
             });
             resultado = await respuesta.json();
-            console.log(resultado);
+            //console.log(resultado);
 
             if(resultado.error) {
                 mostrarAlerta('error', '¡Oh no!', resultado.error);
@@ -70,6 +70,7 @@
             }
 
             mostrarAlerta('success', 'Usuario registrado correctamente', 'Por favor verifique su cuenta ingresando a su email');
+            setTimeout(()=> {window.location.href = '/mensaje'}, 3000);
 
         } catch (error) {
             console.log(error);

@@ -5,7 +5,7 @@ class Persona extends ActiveRecord {
     protected static $tabla = 'persona';
     protected static $columnasDB = ['id', 'nombre', 'apellido', 'telefono', 'genero', 'usuarioid'];
 
-    public $id, $nombre, $apellido, $telefono, $email, $genero, $usuarioid;
+    public $id, $nombre, $apellido, $telefono, $email, $genero, $usuarioid, $mensaje;
 
     public function __construct($args = [])
     {
@@ -15,6 +15,8 @@ class Persona extends ActiveRecord {
         $this->telefono = $args['telefono'] ?? '';
         $this->genero = $args['genero'] ?? '';
         $this->usuarioid = $args['usuarioid'] ?? '';
+        $this->mensaje = $args['mensaje'] ?? '';
+        $this->email = $args['email'] ?? '';
     }
 
     public function validar() {

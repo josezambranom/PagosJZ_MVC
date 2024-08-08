@@ -25,6 +25,8 @@ class Usuario extends ActiveRecord {
         }
         if (!$this->clave) {
             self::$alertas['error'][] = 'La clave es obligatoria';
+        } elseif(strlen($this->clave) < 6) {
+            self::$alertas['error'][] = 'La clave debe contener al menos 6 caracteres';
         }
         return self::$alertas;
     }

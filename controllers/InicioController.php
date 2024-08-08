@@ -1,6 +1,7 @@
 <?php 
 namespace Controllers;
 
+use Classes\Email;
 use Models\Persona;
 use Models\Plataforma;
 use MVC\Router;
@@ -36,7 +37,16 @@ class InicioController {
             $alertas = $persona->validarContacto();
 
             if(empty($alertas)) {
-                
+                $email = new Email($persona->email, $persona->nombre, '', $persona->mensaje, $persona->telefono);
+                $respuesta = $email->info();
+                if($respuesta === '') {
+                    Persona::setAlerta('exito', 'El mensaje ha sido enviado con éxito, 
+                        en el transcurso del día un miembro de nuestro equipo se contactará con usted');
+                } else {
+                    Persona::setAlerta('error', 'Ha ocurrido un error al enviar el mensaje');
+                    //debuguear($respuesta);
+                }
+                $alertas = Persona::getAlertas();
             }
         }
         

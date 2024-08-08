@@ -1,7 +1,7 @@
 <div class="contenedor">
     <div class="auth">
         <img src="/build/img/logo.webp" alt="logo">
-        <form id="formlogin" class="formulario" method="POST">
+        <form id="formlogin" class="formulario" method="POST">            
             <div class="campo">
                 <label for="email">Email:</label>
                 <input type="email" id="email_login" name="email" placeholder="&#128100; Ingrese su email" />

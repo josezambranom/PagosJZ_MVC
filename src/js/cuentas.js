@@ -1,7 +1,19 @@
 (function(){
     let cuentas = [];
+    let cuentasFiltradas = [];
     let plataformas = [];
     getCuentas();
+
+    function filtrarCuentas(ev) {
+        const filtro = ev.target.value.toLowerCase();
+        if (filtro !== '') {
+            cuentasFiltradas = cuentas.filter(cuenta => 
+                cuenta.usuario.toLowerCase().includes(filtro));
+        } else {
+            cuentasFiltradas = [];
+        }
+        mostrarProductos();
+    }
 
     async function getCuentas() {
         try {
@@ -13,8 +25,15 @@
                 return;
             }
             
-            console.log(resultado);
-            cuentas = resultado.cuentas;
+            //console.log(resultado);
+
+            cuentas = resultado.cuentas.sort((a, b) => {
+                if (a.fecha.toLowerCase() > b.fecha.toLowerCase()) return -1;
+                if (a.fecha.toLowerCase() < b.fecha.toLowerCase()) return 1;
+                return 0;
+            });
+            
+            cuentasFiltradas = cuentas;
             plataformas = resultado.plataformas;
             mostrarCuentas();
 
@@ -32,7 +51,19 @@
             '3': { name: 'recargas'}
         };
 
-        cuentas.forEach(cuenta => {
+
+        if(cuentas.length === 0) {
+            const cont = document.querySelector('.cuentas');
+            const p = document.createElement('P');
+            p.textContent = 'Aún no ha adquirido cuentas';
+            p.classList.add('no-cuentas');
+            cont.appendChild(p);
+            return;
+        }
+        
+        const ArrayCuentas = cuentasFiltradas.length ? cuentasFiltradas : cuentas;
+
+        ArrayCuentas.forEach(cuenta => {
 
             const tr = document.createElement('TR');
 

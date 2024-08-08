@@ -38,7 +38,7 @@
                 body: datos
             });
             const resultado = await respuesta.json();
-            console.log(resultado);
+            // console.log(resultado);
 
             if(resultado.error) {
                 mostrarAlerta('error', '¡Oh no!', resultado.error);
