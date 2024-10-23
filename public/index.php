@@ -48,8 +48,16 @@ $router->getRequest('/mensaje', [LoginController::class, 'mensaje']);
 $router->getRequest('/admin', [AdminController::class, 'index']);
 $router->getRequest('/admin/cuentas', [AdminController::class, 'cuentas']);
 $router->postRequest('/admin/cuentas', [AdminController::class, 'cuentas']);
+$router->getRequest('/admin/cuentas/crear', [CuentaController::class, 'crear']);
+$router->postRequest('/admin/cuentas/crear', [CuentaController::class, 'crear']);
+$router->getRequest('/admin/cuentas/actualizar', [CuentaController::class, 'actualizar']);
+$router->postRequest('/admin/cuentas/actualizar', [CuentaController::class, 'actualizar']);
 $router->getRequest('/admin/plataformas', [AdminController::class, 'plataformas']);
 $router->postRequest('/admin/plataformas', [AdminController::class, 'plataformas']);
+$router->getRequest('/admin/plataformas/crear', [PlataformaController::class, 'crear']);
+$router->postRequest('/admin/plataformas/crear', [PlataformaController::class, 'crear']);
+$router->getRequest('/admin/plataformas/actualizar', [PlataformaController::class, 'actualizar']);
+$router->postRequest('/admin/plataformas/actualizar', [PlataformaController::class, 'actualizar']);
 $router->getRequest('/admin/acreditaciones', [AdminController::class, 'acreditaciones']);
 $router->getRequest('/admin/soporte', [AdminController::class, 'soporte']);
 

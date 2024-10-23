@@ -2,13 +2,11 @@
 @use 'base/variables' as v;
 
 .contacto {
-
     .formulario {
-        width: auto;
-        margin: 0 auto;
-        padding: 2rem;
-        border-radius: 1rem;
-        color: v.$negro;
+
+        fieldset{
+            padding: 2rem;
+        }
 
         legend {
             text-align: center;
@@ -19,11 +17,13 @@
 
         input {
             width: 100%;
+            margin: 1.5rem 0;
         }
 
         textarea {
             height: 10rem;
             width: 100%;
+            margin-top: 1.5rem;
             padding: 1rem;
             border-radius: 1rem;
             border: .2rem solid v.$negro;

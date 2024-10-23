@@ -7,24 +7,16 @@
             <fieldset>
                 <?php include_once __DIR__ . '/../templates/alertas.php' ?>
                 <legend>Contáctenos llenando todos los campos</legend>
-                <div class="contenedor-campos">
-                    <div class="campo">
-                        <label>Nombre</label>
-                        <input type="text" name="nombre" placeholder="Escribe tu Nombre" />
-                    </div>
-                    <div class="campo">
-                        <label>Teléfono</label>
-                        <input  type="tel" name="telefono" placeholder="Escribe tu Teléfono" />
-                    </div>
-                    <div class="campo">
-                        <label>Correo</label>
-                        <input  type="email" name="email" placeholder="Escribe tu Email">
-                    </div>
-                    <div class="campo">
-                        <label>Mensaje</label>
-                        <textarea name="mensaje"></textarea>
-                    </div>
-                </div><!-- .contenedor-campos -->
+
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" placeholder="Escribe tu Nombre" />
+                <label for="telefono">Teléfono</label>
+                <input  type="tel" name="telefono" placeholder="Escribe tu Teléfono" />
+                <label for="email">Correo</label>
+                <input  type="email" name="email" placeholder="Escribe tu Email">
+                <label for="mensaje">Mensaje</label>
+                <textarea name="mensaje"></textarea>
+
                 <input class="boton" type="submit" value="Enviar">
             </fieldset>
         </form>

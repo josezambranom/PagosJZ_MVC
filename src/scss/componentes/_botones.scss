@@ -8,3 +8,13 @@
 .boton-eliminar {
     @include m.boton(v.$rojo, v.$blanco);
 }
+
+.boton-guia {
+    @include m.boton(v.$azul, v.$blanco);
+    & {
+        width: auto;
+        font-size: 1.8rem;
+        display: inline-flex;
+        justify-content: flex-end;
+    }
+}

@@ -11,6 +11,7 @@ class AdminController {
         $nombre = $_SESSION['nombre'];
 
         $router->render('admin/index', [
+            'titulo' => 'Administrador',
             'nombre' => $nombre,
             'tipousuario' => $tipousuario
         ]);
@@ -24,6 +25,7 @@ class AdminController {
         $nombre = $_SESSION['nombre'];
 
         $router->render('admin/cuentas', [
+            'titulo' => 'Gestión de Cuentas',
             'nombre' => $nombre,
             'tipousuario' => $tipousuario
         ]);
@@ -36,6 +38,7 @@ class AdminController {
         $nombre = $_SESSION['nombre'];
 
         $router->render('admin/plataformas', [
+            'titulo' => 'Gestión de Plataformas',
             'nombre' => $nombre,
             'tipousuario' => $tipousuario
         ]);
@@ -48,6 +51,7 @@ class AdminController {
         $nombre = $_SESSION['nombre'];
 
         $router->render('admin/acreditaciones', [
+            'titulo'=> 'Gestión de Acreditaciones',
             'nombre' => $nombre,
             'tipousuario' => $tipousuario
         ]);
@@ -60,6 +64,7 @@ class AdminController {
         $nombre = $_SESSION['nombre'];
 
         $router->render('admin/soporte', [
+            'titulo' => 'Gestión de Soporte',
             'nombre' => $nombre,
             'tipousuario' => $tipousuario
         ]);

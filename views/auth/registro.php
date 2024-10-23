@@ -8,42 +8,28 @@
             <p class="descripcion-pagina">Complete los campos a continuación</p>
 
             <form id="form_registro" action="/registro" class="formulario" method="POST">
+                <label for="nombre">Nombres:</label>
+                <input type="text" id="nombre_registro" name="nombre" placeholder="Ingrese sus nombres" />
 
-                <div class="campo">
-                    <label for="nombre">Nombres:</label>
-                    <input type="text" id="nombre_registro" name="nombre" placeholder="Ingrese sus nombres" />
-                </div>
+                <label for="apellido">Apellidos:</label>
+                <input type="text" id="apellido_registro" name="apellido" placeholder="Ingrese sus apellidos" />
 
-                <div class="campo">
-                    <label for="apellido">Apellidos:</label>
-                    <input type="text" id="apellido_registro" name="apellido" placeholder="Ingrese sus apellidos" />
-                </div>
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono_registro" name="telefono" placeholder="Ingrese su teléfono" />
 
-                <div class="campo">
-                    <label for="telefono">Teléfono:</label>
-                    <input type="text" id="telefono_registro" name="telefono" placeholder="Ingrese su teléfono" />
-                </div>
+                <label for="genero">Género:</label>
+                <select name="persona" id="genero_registro">
+                    <option selected value="">-- Seleccione una opción --</option>
+                    <option value="1">Hombre</option>
+                    <option value="0">Mujer</option>
+                    <option value="2">Otro</option>
+                </select>
 
-                <div class="campo">
-                    <label for="genero">Género:</label>
-                    <select name="persona" id="genero_registro">
-                        <option selected value="">-- Seleccione una opción --</option>
-                        <option value="1">Hombre</option>
-                        <option value="0">Mujer</option>
-                        <option value="2">Otro</option>
-                    </select>
-                </div>
+                <label for="email">Email:</label>
+                <input type="email" id="email_registro" name="email" placeholder="Ingrese su email" />
 
-                <div class="campo">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email_registro" name="email" placeholder="Ingrese su email" />
-                </div>
-
-                <div class="campo">
-                    <label for="password">Password:</label>
-                    <input type="password" id="clave_registro" name="password" placeholder="Ingrese su password" />
-                </div>
-
+                <label for="password">Password:</label>
+                <input type="password" id="clave_registro" name="password" placeholder="Ingrese su password" />
 
                 <input class="boton" type="submit" value="Registrarme">
 

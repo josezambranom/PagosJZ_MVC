@@ -2,35 +2,30 @@
 @use 'base/mixins' as m;
 
 .formulario {
-    width: auto;
-    padding: 2rem;
-}
-
-.campo {
-    margin: 2rem auto;
-
-    @include m.tablet {
-        display: flex;
-        margin: 2rem 1rem;
-        align-items: center;
-    }
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    @include m.contenedor-md;
 
     label {
-        flex: 0 0 8rem;
-        font-weight: bold;
+        font-weight: v.$bold;
+        font-size: 1.8rem;
+        padding: 1rem 0;
     }
 
-    input,
+    input:not([type="submit"]):not([type="file"]),
     select {
-        flex: 1;
-        margin-top: 1rem;
         border: .2rem solid;
-        padding: calc(v.$separacion / 4);
+        padding: 1rem;
         border-radius: 1rem;
         &:disabled {
             background-color: lighten(v.$negro, 30%);
             color: v.$blanco;
             cursor: not-allowed;
         }
+    }
+
+    .boton {
+        margin-bottom: 2rem;
     }
 }
