@@ -166,6 +166,28 @@ class ActiveRecord {
         }
     }
 
+    // Subida de archivos
+    public function setImagen($imagen) {
+        // Eliminar la imagen previa
+        if(!is_null($this->id)) {
+            $this->eliminarImagen();
+        }
+
+        // Asignar al atributo de imagen el nombre de la imagen
+        if($imagen) {
+            $this->imagen = $imagen;
+        }
+    }
+
+    // Eliminar archivos
+    public function eliminarImagen() {
+        // Comprobar si existe el archivo
+        $existeArchivo = file_exists(CARPETA_IMAGENES . $this->imagen);
+        if($existeArchivo) {
+            unlink(CARPETA_IMAGENES . $this->imagen);
+        }
+    }
+
 }
 
 ?>

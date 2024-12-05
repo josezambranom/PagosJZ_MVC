@@ -5,7 +5,7 @@
 
     <h2>Crear Plataforma</h2>
 
-    <form class="formulario" action="/admin/plataformas/crear" enctype="multipart/form-data" method="POST">
+    <form class="formulario" id="form_plataforma" action="/admin/plataformas/crear" enctype="multipart/form-data" method="POST">
         <?php include_once __DIR__ . '/formulario.php'; ?>
         <input type="submit" class="boton" value="Crear Plataforma">
     </form>
@@ -14,3 +14,8 @@
 
 
 <?php include_once __DIR__ . '/../../dashboard/footer-user.php'; ?>
+<?php 
+    $script = '
+        <script src="/build/js/crear_plataformas.js"></script>
+    ';
+?>

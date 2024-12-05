@@ -2,31 +2,20 @@
 @use 'base/variables' as v;
 
 .cuentas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    
+    .no-cuentas {
+        font-size: 1.4rem;
+    }
+}
 
-    .plataforma,
-    .fecha {
+.plataforma {
+    &-img {
+        width: 12rem;
+        border-radius: 1rem;
+
         @include m.pc {
             width: 10rem;
         }
     }
 
-    .plataforma-img {
-        width: 8rem;
-        border-radius: 1rem;
-    }
-
-    .perfil,
-    .pin {
-        @include m.pc {
-            width: 2rem;
-        }
-    }
-
-    .no-cuentas {
-        font-size: 1.4rem;
-    }
 }

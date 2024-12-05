@@ -14,7 +14,6 @@
                     <th>Precio</th>
                     <th>Estado</th>
                     <th>Categoría</th>
-                    <th>Admin</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -26,3 +25,8 @@
 </div>
 
 <?php include_once __DIR__ . '/../dashboard/footer-user.php'; ?>
+<?php 
+    $script = '
+        <script src="/build/js/plataformas_admin.js"></script>
+    ';
+?>

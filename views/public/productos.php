@@ -6,7 +6,7 @@
 
 <?php 
     include_once __DIR__ . '/footer-inicio.php';
-    $script .= '
+    $script = '
         <script src="build/js/productos.js"></script>
     ';
 ?>

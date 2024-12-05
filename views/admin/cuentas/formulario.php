@@ -25,7 +25,7 @@
     <input type="date" name="" id="fecha">
 
     <label for="vigencia">Vigencia</label>
-    <select name="cuenta[vigencia]" id="vigencia">
+    <select name="" id="vigencia">
         <option selected value="">-- Seleccione una opción --</option>
         <option value="30">1 Mes</option>
         <option value="60">2 Meses</option>

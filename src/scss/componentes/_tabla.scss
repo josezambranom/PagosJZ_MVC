@@ -7,19 +7,24 @@
     @include m.contenedor-md;
     margin-top: 3rem;
 
-    th,
     td {
         padding: 1rem;
-        border: .1rem solid v.$grisOscuro;
+        border: none;
         background-color: v.$blanco;
     }
 
     thead {
         display: none;
         font-size: 1.8rem;
-        //background-color: v.$celeste;
         @include m.pc {
             display: table-header-group;
+            padding: 2rem;
+            background-color: v.$negro;
+            color: v.$blanco;
+
+            th {
+                padding: 1rem;
+            }
         }
     }
 
@@ -46,9 +51,20 @@
             border: none;
             @include m.pc {
                 display: table-cell;
-                border: .1rem solid v.$grisOscuro;
+                background-color: v.$crema;
             }
         }
     }
 
+    .boton {
+        @include m.boton(lighten(v.$azulOscuro, 10%), v.$blanco);
+        & {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+    }
 }

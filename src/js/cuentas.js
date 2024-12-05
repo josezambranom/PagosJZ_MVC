@@ -17,7 +17,7 @@
 
     async function getCuentas() {
         try {
-            url = '/cuentas';
+            url = '/cuentas/compradas';
             respuesta = await fetch(url);
             resultado = await respuesta.json();
 
@@ -74,10 +74,13 @@
             plataformas.forEach(plataforma => {
                 const category = categoryMap[plataforma.categoria];
                 if(plataforma.id === cuenta.plataformaid) {
+
+                    const tdimagen = document.createElement('TD');
                     const imgPlataforma = document.createElement('IMG');
                     imgPlataforma.src = `/imagenes/${category.name}/${plataforma.imagen}`;
                     imgPlataforma.classList.add('plataforma-img');
-                    plataformaContImg.appendChild(imgPlataforma);
+                    tdimagen.appendChild(imgPlataforma);
+                    plataformaContImg.appendChild(tdimagen);
 
                     plataformaCont.textContent = plataforma.plataforma;
                     plataformaCont.classList.add('plataforma');

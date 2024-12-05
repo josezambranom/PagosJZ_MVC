@@ -22,6 +22,10 @@ $router->getRequest('/nosotros', [InicioController::class, 'nosotros']);
 
 // APIs
 $router->getRequest('/plataforma/productos', [PlataformaController::class, 'plataformaProductos']);
+$router->getRequest('/plataforma/crear', [PlataformaController::class, 'crearPlataforma']);
+$router->postRequest('/plataforma/crear', [PlataformaController::class, 'crearPlataforma']);
+$router->getRequest('/plataforma/actualizar', [PlataformaController::class, 'actualizarPlataforma']);
+$router->postRequest('/plataforma/actualizar', [PlataformaController::class, 'actualizarPlataforma']);
 $router->getRequest('/usuario/login', [UsuarioController::class, 'login']);
 $router->postRequest('/usuario/login', [UsuarioController::class, 'login']);
 $router->getRequest('/usuario/registro', [UsuarioController::class, 'registro']);
@@ -33,6 +37,7 @@ $router->postRequest('/perfil', [UsuarioController::class, 'perfil']);
 $router->getRequest('/cambiar-clave', [UsuarioController::class, 'cambiarClave']);
 $router->postRequest('/cambiar-clave', [UsuarioController::class, 'cambiarClave']);
 $router->getRequest('/cuentas', [CuentaController::class, 'cuentas']);
+$router->getRequest('/cuentas/compradas', [CuentaController::class, 'cuentasVendidas']);
 
 // Auth
 $router->getRequest('/registro', [LoginController::class, 'registro']);

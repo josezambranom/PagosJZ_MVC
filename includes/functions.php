@@ -24,4 +24,22 @@ function Auth() : void {
     }
 }
 
+function rutaimagen(string $categoria) {
+    define ('CARPETA_IMAGENES', __DIR__ . '/../public/imagenes/' . $categoria . '/');
+}
+
+function categoria($c) {
+    switch($c) {
+        case '1':
+            return 'streaming';
+        break;
+        case '2':
+            return 'videojuegos';
+        break;
+        case '3':
+            return 'recargas';
+        break;
+    }
+}
+
 ?>

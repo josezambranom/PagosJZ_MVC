@@ -167,7 +167,7 @@
                 } else {
                     Swal.fire({
                         title: "¡Atención!",
-                        text: "A continuación será redireccionado a a WhatsApp para continuar con su compra",
+                        text: `Usted va a adquirir ${plataforma.plataforma} por el valor de $ ${plataforma.precio}, a continuación será redireccionado a WhatsApp para continuar con su compra`,
                         icon: "info",
                         confirmButtonColor: "#269200",
                         cancelButtonColor: "#d33",
@@ -216,17 +216,38 @@
                             }
                         }); 
                     } else {
+                        // Swal.fire({
+                        //     title: "¡Oh no!",
+                        //     text: "Su saldo es insuficiente",
+                        //     icon: "error",
+                        //     cancelButtonColor: "#d33",
+                        //     confirmButtonText: 'Cargar Saldo',
+                        //     showCancelButton: true,
+                        //     cancelButtonText: 'Cancelar',
+                        //     allowOutsideClick: false
+                        // }).then(result => {
+                        //     if(result.isConfirmed) window.location.href = '/dashboard/acreditaciones';
+                        // });
+                        
                         Swal.fire({
-                            title: "¡Oh no!",
-                            text: "Su saldo es insuficiente",
-                            icon: "error",
-                            cancelButtonColor: "#d33",
-                            confirmButtonText: 'Cargar Saldo',
+                            title: "¡Atención!",
+                            text: "Funcionalidad no disponible, proximamente podrá realizar compras con su saldo. Por favor, realice su compra mediante WhatsApp",
+                            icon: "info",
                             showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: 'Ir a WhatsApp',
                             cancelButtonText: 'Cancelar',
                             allowOutsideClick: false
-                        }).then(result => {
-                            if(result.isConfirmed) window.location.href = '/dashboard/acreditaciones';
+                        }).then((result) => {
+                            if(result.isConfirmed) {
+                                const cel = '593963177642';
+                                const msg = encodeURIComponent(`¡Hola! 👋🏼😄 \n\n` + 
+                                    `Estoy comprando desde la tienda online, deseo adquirir *${plataforma.plataforma}*.\n\n` + 
+                                    `*Nota:* El valor de mi compra es de *$ ${plataforma.precio}*`);
+                                const url = `https://wa.me/${cel}?text=${msg}`;
+                                window.open(url);
+                            }
                         });
                     }
                 }
