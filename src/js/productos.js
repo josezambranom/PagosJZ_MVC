@@ -84,45 +84,48 @@
                 console.error('Categoría no reconocida:', element['categoria']);
                 return;
             }
-    
-            // Crear el contenedor del producto
-            const producto = document.createElement('div');
-            producto.classList.add('producto');
-    
-            // Crear y configurar la imagen del producto
-            const imgProducto = document.createElement('img');
-            imgProducto.src = `/imagenes/${category.name}/${element['imagen']}`;
-            imgProducto.classList.add('producto__imagen');
-            imgProducto.loading = 'lazy';
-            imgProducto.alt = element['plataforma'];
-    
-            // Crear y configurar el nombre del producto
-            const nombreProducto = document.createElement('p');
-            nombreProducto.textContent = element['plataforma'];
-            nombreProducto.classList.add('producto__nombre');
-    
-            // Crear y configurar el precio del producto
-            const precioProducto = document.createElement('p');
-            precioProducto.textContent = `$ ${element['precio']}`;
-            precioProducto.classList.add('producto__precio');
-    
-            const btnComprar = document.createElement('BUTTON');
-            btnComprar.classList.add('boton');
-            btnComprar.textContent = "Comprar";
-            btnComprar.onclick = function(){
-                console.log(element.id);
-                comprar(element.id);
-            }
 
-            // Añadir los elementos al contenedor del producto
-            producto.appendChild(imgProducto);
-            producto.appendChild(nombreProducto);
-            producto.appendChild(precioProducto);
-            producto.appendChild(btnComprar);
-    
-            // Añadir el producto al contenedor correspondiente y actualizar el contador
-            category.container.appendChild(producto);
-            productCounters[category.name]++;
+            if(element.estado !== '0') {
+        
+                // Crear el contenedor del producto
+                const producto = document.createElement('div');
+                producto.classList.add('producto');
+        
+                // Crear y configurar la imagen del producto
+                const imgProducto = document.createElement('img');
+                imgProducto.src = `/imagenes/${category.name}/${element['imagen']}`;
+                imgProducto.classList.add('producto__imagen');
+                imgProducto.loading = 'lazy';
+                imgProducto.alt = element['plataforma'];
+        
+                // Crear y configurar el nombre del producto
+                const nombreProducto = document.createElement('p');
+                nombreProducto.textContent = element['plataforma'];
+                nombreProducto.classList.add('producto__nombre');
+        
+                // Crear y configurar el precio del producto
+                const precioProducto = document.createElement('p');
+                precioProducto.textContent = `$ ${element['precio']}`;
+                precioProducto.classList.add('producto__precio');
+        
+                const btnComprar = document.createElement('BUTTON');
+                btnComprar.classList.add('boton');
+                btnComprar.textContent = "Comprar";
+                btnComprar.onclick = function(){
+                    console.log(element.id);
+                    comprar(element.id);
+                }
+
+                // Añadir los elementos al contenedor del producto
+                producto.appendChild(imgProducto);
+                producto.appendChild(nombreProducto);
+                producto.appendChild(precioProducto);
+                producto.appendChild(btnComprar);
+        
+                // Añadir el producto al contenedor correspondiente y actualizar el contador
+                category.container.appendChild(producto);
+                productCounters[category.name]++;
+            }
         });     
 
         // Actualizar los contadores de productos

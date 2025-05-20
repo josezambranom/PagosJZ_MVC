@@ -1,0 +1,12 @@
+node_modules
+vendor
+.idea
+.git
+.env
+.DS_Store
+src
+.gitignore
+.dockerignore
+composer.lock
+package-lock.lock
+gulpfile.js
